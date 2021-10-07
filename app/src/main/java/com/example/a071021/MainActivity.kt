@@ -20,15 +20,36 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-       findViewById<Button>(R.id.bt1).setOnClickListener {
-          findViewById<TextView>(R.id.liczba).text = "0";
+       findViewById<Button>(R.id.bt0).setOnClickListener {
+          findViewById<TextView>(R.id.wynik).text = "0"
        }
         findViewById<Button>(R.id.bt1).setOnClickListener {
-            findViewById<TextView>(R.id.liczba).text = "1";
+            findViewById<TextView>(R.id.wynik).text = "1"
         }
-
-
-
+        findViewById<Button>(R.id.bt2).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "2"
+        }
+        findViewById<Button>(R.id.bt3).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "3"
+        }
+        findViewById<Button>(R.id.bt4).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "4"
+        }
+        findViewById<Button>(R.id.bt5).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "5"
+        }
+        findViewById<Button>(R.id.bt6).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "6"
+        }
+        findViewById<Button>(R.id.bt7).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "7"
+        }
+        findViewById<Button>(R.id.bt8).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "8"
+        }
+        findViewById<Button>(R.id.bt9).setOnClickListener {
+            findViewById<TextView>(R.id.wynik).text = "9"
+        }
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
