@@ -6,13 +6,28 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        var wynik = 0;
+        var napis = wynik.toString()
+
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
+       findViewById<Button>(R.id.bt1).setOnClickListener {
+          findViewById<TextView>(R.id.liczba).text = "0";
+       }
+        findViewById<Button>(R.id.bt1).setOnClickListener {
+            findViewById<TextView>(R.id.liczba).text = "1";
+        }
+
+
 
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
