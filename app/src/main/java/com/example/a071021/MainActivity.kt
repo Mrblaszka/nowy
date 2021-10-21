@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
         var napis = wynik.toString()
         var LiczbaPierwsza = 0
         var LiczbaDruga = 0
+        var dzialanie = 0
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -63,13 +64,50 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.wynik).text =
                 findViewById<TextView>(R.id.wynik).text.toString() + "9"
         }
+
         findViewById<Button>(R.id.dodac).setOnClickListener {
+           dzialanie = 1
             LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
-        }
-            findViewById<Button>(R.id.odjac).setOnClickListener {
-                LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+            findViewById<TextView>(R.id.wynik).text = ""
 
         }
+            findViewById<Button>(R.id.odjac).setOnClickListener {
+                dzialanie = 2
+                 LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+                 findViewById<TextView>(R.id.wynik).text = ""
+
+        }
+        findViewById<Button>(R.id.iloczyn).setOnClickListener {
+            dzialanie = 3
+            LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+            findViewById<TextView>(R.id.wynik).text = ""
+        }
+        findViewById<Button>(R.id.iloraz).setOnClickListener {
+            dzialanie = 4
+            LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+            findViewById<TextView>(R.id.wynik).text = ""
+        }
+        findViewById<Button>(R.id.rowna).setOnClickListener {
+            LiczbaDruga = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+            wynik = LiczbaPierwsza + LiczbaDruga
+            findViewById<TextView>(R.id.wynik).text = wynik.toString()
+            if (dzialanie == 1) {
+                wynik = LiczbaPierwsza + LiczbaDruga
+            } else if (dzialanie == 2) {
+                wynik = LiczbaPierwsza - LiczbaDruga
+            } else if (dzialanie == 3) {
+                wynik = LiczbaPierwsza * LiczbaDruga
+            } else if (dzialanie == 4) {
+
+                if (LiczbaDruga == 0) {
+                    findViewById<TextView>(R.id.wynik).text = "Nie dziel przez 0"
+                }
+                else  {
+                    wynik = LiczbaPierwsza / LiczbaDruga
+                }
+            }
+        }
+
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
