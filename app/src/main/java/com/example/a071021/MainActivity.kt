@@ -13,42 +13,62 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        var wynik = 0;
+        var wynik = 0
         var napis = wynik.toString()
-
-
-
+        var LiczbaPierwsza = 0
+        var LiczbaDruga = 0
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        findViewById<TextView>(R.id.wynik).text = "0"
+
        findViewById<Button>(R.id.bt0).setOnClickListener {
-          findViewById<TextView>(R.id.wynik).text = "0"
+          findViewById<TextView>(R.id.wynik).text =
+              findViewById<TextView>(R.id.wynik).text.toString() + "0"
        }
         findViewById<Button>(R.id.bt1).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "1"
+            findViewById<TextView>(R.id.wynik).text =
+               findViewById<TextView>(R.id.wynik).text.toString() + "1"
         }
         findViewById<Button>(R.id.bt2).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "2"
+            findViewById<TextView>(R.id.wynik).text =
+               findViewById<TextView>(R.id.wynik).text.toString() + "2"
         }
         findViewById<Button>(R.id.bt3).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "3"
+            findViewById<TextView>(R.id.wynik).text =
+               findViewById<TextView>(R.id.wynik).text.toString() + "3"
         }
         findViewById<Button>(R.id.bt4).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "4"
+            findViewById<TextView>(R.id.wynik).text =
+               findViewById<TextView>(R.id.wynik).text.toString() + "4"
         }
         findViewById<Button>(R.id.bt5).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "5"
+            findViewById<TextView>(R.id.wynik).text =
+               findViewById<TextView>(R.id.wynik).text.toString() + "5"
         }
         findViewById<Button>(R.id.bt6).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "6"
+            findViewById<TextView>(R.id.wynik).text =
+                findViewById<TextView>(R.id.wynik).text.toString() + "6"
+
         }
         findViewById<Button>(R.id.bt7).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "7"
+            findViewById<TextView>(R.id.wynik).text =
+               findViewById<TextView>(R.id.wynik).text.toString() + "7"
         }
         findViewById<Button>(R.id.bt8).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "8"
+            findViewById<TextView>(R.id.wynik).text =
+                findViewById<TextView>(R.id.wynik).text.toString() + "8"
         }
         findViewById<Button>(R.id.bt9).setOnClickListener {
-            findViewById<TextView>(R.id.wynik).text = "9"
+            findViewById<TextView>(R.id.wynik).text =
+                findViewById<TextView>(R.id.wynik).text.toString() + "9"
+        }
+        findViewById<Button>(R.id.dodac).setOnClickListener {
+            LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+        }
+            findViewById<Button>(R.id.odjac).setOnClickListener {
+                LiczbaPierwsza = findViewById<TextView>(R.id.wynik).text.toString().toInt()
+
         }
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
